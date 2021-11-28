@@ -134,21 +134,9 @@ if ($link->connect_error) {
 
 	<h2>Sie wünschen sich ein Gericht?</h2>
 
-	<form action="wunschgericht.php" id="Wgericht">
-		<label for="name_Wgericht">Welches Gericht Wünschst du dir?</label>
-		<input type="text" name="name_Wgericht" id="name_Wgericht"><br>
+	<p>Falls Sie ein Gericht in unserem Angebot vermissen, können Sie sich <a href="./wunschgericht.php">hier</a> eins wünschen!</p>
 
-		<label for="comment_Wgericht">Beschreibe dein Wunschgericht:</label>
-		<textarea name="comment_Wgericht" id="comment_Wgericht" cols="30" rows="10" placeholder="Text hier..." form="Wgericht"></textarea><br>
-		
-		<label for="name_ersteller">Möchtest du uns deinen Namen Sagen?</label>
-		<input type="text" name="name_ersteller" id="name_ersteller"><br>
-		
-		<label for="email_ersteller">Wie können wir dich erreichen</label>
-		<input type="email" name="email_ersteller" id="email_ersteller"><br>
-		
-		<input type="submit" value="Wunschgericht beantragen">
-	</form>
+	
 
 	
 
