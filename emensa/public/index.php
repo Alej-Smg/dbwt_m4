@@ -36,15 +36,15 @@ class RequestData
     /**
      * @var array Request Querystring, broken down to key-value pairs
      */
-    public array $query;
+    public $query = array();
     /**
      * @var array Request arguments from path, after cutting two segments out for controller and action names
      */
-    public array $args;
+    public $args = array();
     /**
      * @var string HTTP Verb used
      */
-    public string $method;
+    public $method = "";
 
     /**
      * RequestData is the way the Router will provide information, use it in your Action methods.

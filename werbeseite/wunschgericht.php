@@ -64,9 +64,9 @@ if (isset($_POST["name_Wgericht"]) && !$link->connect_error){
 
 	
 	// Querys erstellen
-	$SQL_insert_ersteller = "INSERT INTO ersteller VALUES ($name_ersteller, $email_ersteller)";
+	$SQL_insert_ersteller = "INSERT INTO ersteller (Name, E_Mail) VALUES ('$name_ersteller', '$email_ersteller');";
 	$SQL_insert_wunschgericht = "INSERT INTO wunschgericht (Name, Beschreibung, Erstellt_von) 
-		VALUES ($name_Wgericht, $comment_Wgericht, $name_ersteller)";
+		VALUES ('$name_Wgericht', '$comment_Wgericht', '$name_ersteller');";
 
 /**
  * $stmt = $link->prepare("INSERT INTO wunschgericht (vorname, email, gerichtname, beschreibung) VALUES (?, ?, ?, ?)");
@@ -75,7 +75,7 @@ if (isset($_POST["name_Wgericht"]) && !$link->connect_error){
  */
 	// Querys an server schicken
 	if ($link->query($SQL_insert_ersteller)) echo "query 1 true\n";
-	else echo "query 1 fail\n";
+	else echo $link -> error . "\n";
 	if ($link->query($SQL_insert_wunschgericht)) echo "query 2 true\n";
 	else echo "query 2 fail\n";
 
