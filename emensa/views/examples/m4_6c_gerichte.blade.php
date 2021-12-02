@@ -6,14 +6,22 @@
 -->
 <html lang="de">
 <head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="index.css">
-	<title></title>
+    <meta charset="UTF-8">
+    <title>Alle Kategorien</title>
 </head>
 <body>
-	{{-- alle Namen und internen Preise von Gerichten, die 
-intern mehr als 2€ kosten sortiert nach Name absteigend darstellt. Sind 
-keine Gerichte zu finden, so soll der Text „Es sind keine Gerichte vorhanden“ 
-dargestellt werden. --}}
+
+<article>
+    <h1>Daten aus der Datenbank der Tabelle: Kategorie</h1>
+    <p>Der Controller inkludiert das benötigte Model (kategorie.php in diesem Fall)
+        und ruft die benötigte Funktion <code>db_kategorie_select_all()</code> zum Laden der Daten auf</p>
+    <ul>
+        @forelse($data as $a)
+            <li>{{$a['name']}} {{$a['preis_intern']}}</li>
+        @empty
+            <li>Keine Daten vorhanden.</li>
+        @endforelse
+    </ul>
+</article>
 </body>
 </html>

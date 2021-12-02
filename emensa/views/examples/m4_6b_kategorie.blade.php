@@ -6,13 +6,28 @@
 -->
 <html lang="de">
 <head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="index.css">
-	<title></title>
+    <meta charset="UTF-8">
+    <title>Alle Kategorien</title>
 </head>
 <body>
-	{{-- alle Namen der Kategorien der Gerichte in der 
-Datenbank aufsteigend sortiert ausgibt. Jeder zweite Name soll (über CSS) 
-fett ausgegeben werden. --}}
+
+<article>
+    <h1>Daten aus der Datenbank der Tabelle: Kategorie</h1>
+    <p>Der Controller inkludiert das benötigte Model (kategorie.php in diesem Fall)
+        und ruft die benötigte Funktion <code>db_kategorie_select_all()</code> zum Laden der Daten auf</p>
+    <ul>
+        @forelse($data as $a)
+            @if ($loop->iteration%2==0)
+                <li style="font-weight: bold">{{$a['name']}}</li>
+            @else
+                <li>{{$a['name']}}</li>
+            @endif
+
+
+        @empty
+            <li>Keine Daten vorhanden.</li>
+        @endforelse
+    </ul>
+</article>
 </body>
 </html>

@@ -6,21 +6,38 @@
 -->
 <html lang="de">
 <head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="index.css">
-	<title></title>
+    <title>@yield('title')</title>
+    <form method="get">
+    <select name="no" id="page">
+        <option value="1" selected>1</option>
+        <option value="2">2</option>
+    </select>
+        <?php
+        if(isset($_GET['no'])){
+            $page = $_GET['no'];
+        }
+        ?>
+    </form>
+
+
+
+    <br>
 </head>
-<body>
-	{{-- drei 
-unterschiedlichen Bereichen mit den Namen: header, main, footer sowie 
-einer Variablen title, die den Titel der Seite im Layout setzt.  
-Schreiben Sie zwei Seiten, die das Layout mit unterschiedlichen Inhalten 
-verwenden: 
-       views/examples/pages/m4_6d_page_1.blade.php und 
-       views/examples/pages/m4_6d_page_2.blade.php 
-Steuern Sie über den Controller über einen Abfrageparameter no in der URL, 
-welche Seite der Controller laden soll (?no=1 für  m4_6d_page_1.blade.php 
-und ?no=2 für m4_6d_page_2.blade.php). Ohne Parameter wird no=1 
-angenommen. --}}
+<body bgcolor="#a52a2a">
+<header>
+    @section('header')
+        Header
+    @show
+</header>
+<main>
+    @section('main')
+        Main
+    @show
+</main>
+<footer>
+    @section('footer')
+        Footer
+    @show
+</footer>
 </body>
 </html>
